@@ -32,7 +32,10 @@ export async function loadRuntimeConfig(): Promise<void> {
   try {
     console.log("🔧 DEBUG: Starting to load runtime config...");
 
-    const response = await fetch("/api/config", { cache: "no-store" });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3000);
+    const response = await fetch("/api/config", { cache: "no-store", signal: controller.signal });
+    clearTimeout(timeout);
 
     console.log("🔧 DEBUG: /api/config status =", response.status);
     console.log(
