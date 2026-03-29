@@ -10,17 +10,13 @@ interface PortfolioItem {
   videoSrc: string;
 }
 
-// Public Object Storage base URL — videos bucket is public, no signed URLs needed.
-// These URLs never expire, unlike signed presigned URLs (which lasted only 10 min).
-const OSS_BASE = "https://ce605449e660091782d8f8c70db288e0.oss.atoms.dev";
-
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
-  { id: 1, title: "Предложение", category: "Love Story", duration: "4 мин", videoSrc: `${OSS_BASE}/predlozhenie.mp4` },
-  { id: 2, title: "Годовщина 30 лет", category: "Love Story", duration: "4 мин", videoSrc: `${OSS_BASE}/godovshhina-30-let.mp4` },
-  { id: 3, title: "Для жены", category: "Love Story", duration: "4 мин", videoSrc: `${OSS_BASE}/dlya-zheny.mp4` },
-  { id: 4, title: "15 лет в браке", category: "Love Story", duration: "2 мин", videoSrc: `${OSS_BASE}/15-let-v-brake.mp4` },
-  { id: 5, title: "1 минута без озвучки", category: "Love Story", duration: "1 мин", videoSrc: `${OSS_BASE}/1-min-bez-ozvuchki.mp4` },
-  { id: 6, title: "1.5 минуты без озвучки", category: "Love Story", duration: "1.5 мин", videoSrc: `${OSS_BASE}/1-5-min-bez-ozvuchki.mp4` },
+  { id: 1, title: "Предложение", category: "Love Story", duration: "4 мин", videoSrc: "/assets/videos/predlozhenie.mp4" },
+  { id: 2, title: "Годовщина 30 лет", category: "Love Story", duration: "4 мин", videoSrc: "/assets/videos/godovshhina-30-let.mp4" },
+  { id: 3, title: "Для жены", category: "Love Story", duration: "4 мин", videoSrc: "/assets/videos/dlya-zheny.mp4" },
+  { id: 4, title: "15 лет в браке", category: "Love Story", duration: "2 мин", videoSrc: "/assets/videos/15-let-v-brake.mp4" },
+  { id: 5, title: "1 минута без озвучки", category: "Love Story", duration: "1 мин", videoSrc: "/assets/videos/1-min-bez-ozvuchki.mp4" },
+  { id: 6, title: "1.5 минуты без озвучки", category: "Love Story", duration: "1.5 мин", videoSrc: "/assets/videos/1-5-min-bez-ozvuchki.mp4" },
 ];
 
 const categories = ["Все", "Love Story"];
@@ -109,7 +105,6 @@ export default function PortfolioSection() {
                   loop
                   playsInline
                   preload="metadata"
-                  crossOrigin="anonymous"
                 >
                   <source src={item.videoSrc} type="video/mp4" />
                 </video>
