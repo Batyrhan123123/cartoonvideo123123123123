@@ -61,7 +61,7 @@ export default function ServicesSection() {
             <span className="gradient-text">Услуги</span>
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            От сценария до субтитров — полный цикл производства 3D-роликов.
+            От сценария до субтитров — полный цикл создания персональных мультиков.
           </p>
         </div>
 

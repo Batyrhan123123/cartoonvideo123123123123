@@ -1,14 +1,14 @@
 import { useParallax } from "@/hooks/useParallax";
-import { Play, Sparkles, Clock, Monitor, FileText, Shield } from "lucide-react";
+import { Sparkles, BadgeCheck, FileText, MapPin, Clock } from "lucide-react";
 
 const HERO_IMG = "https://mgx-backend-cdn.metadl.com/generate/images/992485/2026-03-18/1ba40c0f-8251-45f2-b598-cbe2ba19ee2a.png";
 const BG_IMG = "https://mgx-backend-cdn.metadl.com/generate/images/992485/2026-03-18/f8f1c436-bfe8-4b74-a0b4-1106b1e74b83.png";
 
 const badges = [
-  { icon: Clock, label: "1–3 дней" },
-  { icon: Monitor, label: "4K рендер" },
-  { icon: FileText, label: "Сценарий + раскадровка" },
-  { icon: Shield, label: "Гарантия правок" },
+  { icon: BadgeCheck, label: "Полное сходство" },
+  { icon: FileText, label: "Индивидуальный сценарий" },
+  { icon: MapPin, label: "Живые локации" },
+  { icon: Clock, label: "Готовность от 24 часов" },
 ];
 
 export default function NewHeroSection() {
@@ -39,27 +39,23 @@ export default function NewHeroSection() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1]">
-              <span className="new-gradient-text">Pixar-style 3D</span>
+              <span className="new-gradient-text">Станьте героями собственного мультфильма</span>
               <br />
-              <span className="text-white">анимации для брендов</span>
-              <br />
-              <span className="text-white/80">и личных историй</span>
+              <span className="text-white">в стиле Pixar.</span>
             </h1>
 
             <p className="text-lg text-white/60 max-w-lg leading-relaxed">
-              Ролики от 1 минуты: реклама, love-story. Мягкая 3D в духе Elemental
-              и Big Hero 6 — для тех, кто хочет выделиться.
+              Персональные мультфильмы по вашим фото и воспоминаниям. Подари лучшие эмоции своим близким.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={() =>
-                  document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" })
+                  document.querySelector("#contacts")?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="group flex items-center gap-3 px-8 py-4 rounded-full new-gradient-btn text-white font-semibold transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#9333EA]/25"
+                className="px-8 py-4 rounded-full new-gradient-btn text-white font-semibold transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#9333EA]/25"
               >
-                <Play size={20} className="group-hover:scale-110 transition-transform" />
-                Смотреть шоурил
+                Заказать проект
               </button>
               <button
                 onClick={() =>
@@ -67,7 +63,7 @@ export default function NewHeroSection() {
                 }
                 className="px-8 py-4 rounded-full glass text-white font-semibold hover:bg-white/10 transition-all hover:scale-105"
               >
-                Заказать проект
+                Узнать стоимость
               </button>
             </div>
 
@@ -92,7 +88,7 @@ export default function NewHeroSection() {
               <div className="absolute -inset-4 bg-gradient-to-r from-[#9333EA]/35 to-[#6366F1]/30 rounded-3xl blur-2xl" />
               <img
                 src={HERO_IMG}
-                alt="Pixar-style 3D animation"
+                alt="Персональный мультфильм в стиле Pixar"
                 className="relative rounded-3xl shadow-2xl shadow-[#9333EA]/20 w-full animate-float-slow"
               />
               <div className="absolute -bottom-4 -left-4 glass-strong rounded-2xl px-5 py-3 animate-float" style={{ animationDelay: "1s" }}>

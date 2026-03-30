@@ -19,18 +19,10 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
   { id: 6, title: "1.5 минуты без озвучки", category: "Love Story", duration: "1.5 мин", videoSrc: "/assets/videos/1-5-min-bez-ozvuchki.mp4" },
 ];
 
-const categories = ["Все", "Love Story"];
-
 export default function NewPortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState("Все");
   const [playingId, setPlayingId] = useState<number | null>(null);
   const videoRefs = useRef<Record<number, HTMLVideoElement | null>>({});
   const { ref, isInView } = useInView();
-
-  const filtered =
-    activeCategory === "Все"
-      ? PORTFOLIO_ITEMS
-      : PORTFOLIO_ITEMS.filter((item) => item.category === activeCategory);
 
   const togglePlay = (id: number) => {
     const video = videoRefs.current[id];
@@ -53,32 +45,17 @@ export default function NewPortfolioSection() {
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`text-center mb-16 transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
             <span className="new-gradient-text">Работы</span>
           </h2>
+          <p className="text-white/70 text-lg font-medium mb-4">Галерея живых историй</p>
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            Шоурил и кейсы: реклама, love story, Reels, explainer-ролики.
+            От трогательных Love Story до масштабных семейных саг. Каждый мультфильм уникален, как и ваша история.
           </p>
         </div>
 
-        <div className="flex justify-center gap-3 mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
-                activeCategory === cat
-                  ? "new-gradient-btn text-white shadow-lg shadow-[#9333EA]/25"
-                  : "glass text-white/60 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((item, i) => (
+          {PORTFOLIO_ITEMS.map((item, i) => (
             <div
               key={item.id}
               className={`group relative rounded-2xl overflow-hidden glass hover:border-[#9333EA]/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#9333EA]/10 ${

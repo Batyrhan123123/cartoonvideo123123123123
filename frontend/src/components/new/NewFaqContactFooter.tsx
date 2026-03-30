@@ -253,7 +253,7 @@ export default function NewFaqContactFooter() {
                 <span className="-ml-2.5 text-3xl font-semibold tracking-wide bg-gradient-to-r from-[#7DD3FC] via-[#C4B5FD] to-[#A78BFA] bg-clip-text text-transparent leading-none mb-[0.05rem]" style={{ fontFamily: "'Fredoka', sans-serif" }}>artoon</span>
               </div>
               <p className="text-sm text-white/40 leading-relaxed max-w-xs">
-                Pixar-style 3D анимации для брендов и личных историй. Реклама, Love Story, Reels, explainer.
+                Персональные мультфильмы по вашим фото и воспоминаниям. Подари лучшие эмоции своим близким.
               </p>
             </div>
             <div>
