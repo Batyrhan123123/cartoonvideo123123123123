@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -63,6 +64,18 @@
   .gradient-btn {
     @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400;
   }
+  .new-gradient-text {
+    background-image: linear-gradient(to right, #C084FC, #818CF8, #60A5FA);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .new-gradient-btn {
+    background-image: linear-gradient(to right, #9333EA, #6366F1);
+  }
+  .new-gradient-btn:hover {
+    background-image: linear-gradient(to right, #A855F7, #818CF8);
+  }
 }
 
 /* Custom scrollbar */
@@ -75,6 +88,13 @@
 ::-webkit-scrollbar-thumb {
   background: #8B5CF6;
   border-radius: 3px;
+}
+
+.new-theme ::-webkit-scrollbar-track {
+  background: #0B0514;
+}
+.new-theme ::-webkit-scrollbar-thumb {
+  background: #A855F7;
 }
 
 /* Parallax layers */
